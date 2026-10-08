@@ -1,5 +1,5 @@
 class ApiConfig {
-  static const String baseUrl = 'http://10.0.2.2:5000/api'; // Use 10.0.2.2 for Android Emulator, localhost for iOS
+  static const String baseUrl = 'http://172.25.246.203:5000/api'; // Use 10.0.2.2 for Android Emulator, localhost for iOS
 
   // Endpoints
   static const String signup = '/auth/signup';
