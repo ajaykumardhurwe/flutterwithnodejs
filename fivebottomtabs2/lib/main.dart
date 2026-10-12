@@ -125,6 +125,57 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import 'package:flutter/material.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
+// import 'screens/splash/splash_screen.dart';
+// import 'utils/app_colors.dart';
+
+// void main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   final prefs = await SharedPreferences.getInstance();
+//   final saved = prefs.getString('theme_mode') ?? 'system';
+//   AppTheme.mode.value = saved == 'dark' ? ThemeMode.dark : saved == 'light' ? ThemeMode.light : ThemeMode.system;
+//   runApp(const SocialApp());
+// }
+
+// class SocialApp extends StatelessWidget {
+//   const SocialApp({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return ValueListenableBuilder<ThemeMode>(
+//       valueListenable: AppTheme.mode,
+//       builder: (_, mode, __) => MaterialApp(
+//         title: 'Socially', debugShowCheckedModeBanner: false,
+//         themeMode: mode, theme: AppTheme.light, darkTheme: AppTheme.dark,
+//         home: const SplashScreen(),
+//       ),
+//     );
+//   }
+// }
+
+
+
+
+
+
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'screens/splash/splash_screen.dart';
