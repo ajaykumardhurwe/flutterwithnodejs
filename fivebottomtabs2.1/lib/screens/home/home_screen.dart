@@ -10,6 +10,10 @@ import '../../widgets/post_card.dart';
 import '../auth/login_screen.dart';
 import '../post/create_post_screen.dart';
 import '../profile/profile_screen.dart';
+import '../jobs/jobs_screen.dart';
+
+
+
 
 class HomeScreen extends StatefulWidget {
   final UserModel user;
@@ -72,9 +76,11 @@ class _HomeScreenState extends State<HomeScreen> {
       _feed(),
       _searchPage(),
       _activityPage(),
+      const JobScreen(),
       ProfileScreen(user: widget.user, onLogout: _logout),
     ];
 
+    // final pageIndex = _index > 2 ? _index - 1 : _index;
     final pageIndex = _index > 2 ? _index - 1 : _index;
     return Scaffold(
       appBar: _index == 2
@@ -151,6 +157,17 @@ class _HomeScreenState extends State<HomeScreen> {
             selectedIcon: Icon(Icons.favorite_rounded),
             label: 'Activity',
           ),
+
+          NavigationDestination(
+            icon: Icon(Icons.work_outline_rounded),
+            selectedIcon: Icon(Icons.work_rounded),
+            label: 'Jobs'
+          ),
+          // NavigationDestination(
+          //  icon: Icon(Icons.video_library_outlined),
+          //  selectedIcon: Icon(Icons.video_library_rounded),
+          //  label: 'Reels',
+          // ),
           NavigationDestination(
             icon: Icon(Icons.person_outline_rounded),
             selectedIcon: Icon(Icons.person_rounded),
@@ -344,6 +361,36 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  // Widget _activityPage() {
+  //   return Center(
+  //     child: Padding(
+  //       padding: const EdgeInsets.all(28),
+  //       child: Column(
+  //         mainAxisSize: MainAxisSize.min,
+  //         children: [
+  //           Icon(
+  //             Icons.notifications_none_rounded,
+  //             size: 58,
+  //             color: Theme.of(context).hintColor,
+  //           ),
+  //           const SizedBox(height: 12),
+  //           const Text(
+  //             'You’re all caught up',
+  //             style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800),
+  //           ),
+  //           const SizedBox(height: 6),
+  //           Text(
+  //             'New activity will show up here.',
+  //             style: TextStyle(color: Theme.of(context).hintColor),
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
+
+
+
   Widget _activityPage() {
     return Center(
       child: Padding(
@@ -371,6 +418,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+
+
 
   Future<void> _logout() async {
     await StorageService().clearUser();
