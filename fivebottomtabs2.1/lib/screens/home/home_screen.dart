@@ -75,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final pages = <Widget>[
       _feed(),
       _searchPage(),
-      _activityPage(),
+      // _activityPage(),
       const JobScreen(),
       ProfileScreen(user: widget.user, onLogout: _logout),
     ];
@@ -152,11 +152,11 @@ class _HomeScreenState extends State<HomeScreen> {
             selectedIcon: Icon(Icons.add_box_rounded),
             label: 'Create',
           ),
-          NavigationDestination(
-            icon: Icon(Icons.favorite_border_rounded),
-            selectedIcon: Icon(Icons.favorite_rounded),
-            label: 'Activity',
-          ),
+          // NavigationDestination(
+          //   icon: Icon(Icons.favorite_border_rounded),
+          //   selectedIcon: Icon(Icons.favorite_rounded),
+          //   label: 'Activity',
+          // ),
 
           NavigationDestination(
             icon: Icon(Icons.work_outline_rounded),
@@ -391,33 +391,33 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
 
-  Widget _activityPage() {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(28),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              Icons.notifications_none_rounded,
-              size: 58,
-              color: Theme.of(context).hintColor,
-            ),
-            const SizedBox(height: 12),
-            const Text(
-              'You’re all caught up',
-              style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800),
-            ),
-            const SizedBox(height: 6),
-            Text(
-              'New activity will show up here.',
-              style: TextStyle(color: Theme.of(context).hintColor),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+  // Widget _activityPage() {
+  //   return Center(
+  //     child: Padding(
+  //       padding: const EdgeInsets.all(28),
+  //       child: Column(
+  //         mainAxisSize: MainAxisSize.min,
+  //         children: [
+  //           Icon(
+  //             Icons.notifications_none_rounded,
+  //             size: 58,
+  //             color: Theme.of(context).hintColor,
+  //           ),
+  //           const SizedBox(height: 12),
+  //           const Text(
+  //             'You’re all caught up',
+  //             style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800),
+  //           ),
+  //           const SizedBox(height: 6),
+  //           Text(
+  //             'New activity will show up here.',
+  //             style: TextStyle(color: Theme.of(context).hintColor),
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
 
 
 
